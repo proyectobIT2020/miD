@@ -29,7 +29,7 @@ def perfil():
 @app.route('/recuperarcontraseña')
 def contra():
     return 'Contraseña incorrecta'
-#holagit
+
 #Ejecución del servidor
 #debug: reinicio automático
 if __name__ == '__main__':
