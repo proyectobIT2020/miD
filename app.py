@@ -1,8 +1,6 @@
 from flask import Flask, render_template
 from peewee import *
 
-
-#CAMBIO PAULA 
 db = SqliteDatabase('midapp.db')
 
 app = Flask (__name__)
