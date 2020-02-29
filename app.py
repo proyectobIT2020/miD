@@ -7,12 +7,10 @@ app = Flask (__name__)
 
 #Ruta página inicio
 #holis
-<<<<<<< HEAD
 #como estas?
 
-=======
+
 #PRUEBA NABI
->>>>>>> ec5084f8506202961f5bf528af5528ab3d232bca
 @app.route('/')
 def Index():
     return render_template('index.html')
