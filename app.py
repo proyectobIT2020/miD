@@ -2,7 +2,7 @@ from flask import Flask, render_template
 from peewee import *
 
 db = SqliteDatabase('midapp.db')
-
+#PRUEBA NABILA
 app = Flask (__name__)
 
 #Ruta página inicio
