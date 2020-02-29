@@ -6,13 +6,6 @@ db = SqliteDatabase('midapp.db')
 app = Flask (__name__)
 
 #Ruta página inicio
-#holis
-#como estas?
-
-
-#PRUEBA NABI
-#PRUEBA DAY
-
 @app.route('/')
 def Index():
     return render_template('index.html')
