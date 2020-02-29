@@ -7,6 +7,9 @@ app = Flask (__name__)
 
 #Ruta página inicio
 #holis
+#como estas?
+
+
 #PRUEBA NABI
 #PRUEBA DAY
 
