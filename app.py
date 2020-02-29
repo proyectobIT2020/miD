@@ -7,6 +7,7 @@ app = Flask (__name__)
 
 #Ruta página inicio
 #holis
+#como estas?
 
 @app.route('/')
 def Index():
