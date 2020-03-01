@@ -1,7 +1,29 @@
 from flask import Flask, render_template
 from peewee import *
+import sqlite3
 
-db = SqliteDatabase('midapp.db')
+#***************************************************
+#base de datos
+con = sqlite3.connect('miDbd.db')
+cursorObj = con.cursor()
+from sqlite3 import Error
+
+def sql_connection():
+    try:
+        con = sqlite3.connect('miDbd.db')
+        return con
+    except Error:
+        print(Error)
+
+def sql_table(con):
+    cursorObj = con.cursor()
+    cursorObj.execute("CREATE TABLE if not exists usuario(IDusuario integer PRIMARY KEY, mail text, contraseña text)")
+    con.commit()
+
+con = sql_connection()
+
+sql_table(con)
+#****************************************************
 
 app = Flask (__name__)
 
@@ -27,7 +49,7 @@ def perfil():
     return 'Mi perfil'
 #Contactos
 @app.route('/contactos')
-def perfil():
+def contactos():
     return 'Mis contactos'
 #olvide contraseña
 @app.route('/recuperarcontraseña')
