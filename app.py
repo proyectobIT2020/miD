@@ -23,7 +23,7 @@ def Index():
 #Registro
 @app.route('/registro')
 def registro():
-    return 'Crear usuario nuevo'
+    return render_template('Registro.html')
 #Ingresar datos
 @app.route('/datos')
 def datos():
