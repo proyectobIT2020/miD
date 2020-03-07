@@ -4,25 +4,14 @@ import sqlite3
 
 #***************************************************
 #base de datos
-con = sqlite3.connect('miDbd.db')
-cursorObj = con.cursor()
-from sqlite3 import Error
-
-def sql_connection():
-    try:
-        con = sqlite3.connect('miDbd.db')
-        return con
-    except Error:
-        print(Error)
-
-def sql_table(con):
-    cursorObj = con.cursor()
-    cursorObj.execute("CREATE TABLE if not exists usuario(IDusuario integer PRIMARY KEY, mail text, contraseña text)")
-    con.commit()
-
-con = sql_connection()
-
-sql_table(con)
+conn = sqlite3.connect('miDbd.db')
+cursor = con.cursor()
+#insertar fila
+cursor.execute(INSERT INTO usuario VALUES ('mail', 'contraseña'))
+#salvar datos
+conn.commit()
+#cerrar conexion
+conn.close()
 #****************************************************
 
 app = Flask (__name__)
