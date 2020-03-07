@@ -42,7 +42,7 @@ def datos():
 #Login
 @app.route('/inicio')
 def ingresar():
-    return 'Iniciar sesión'
+    return render_template('iniciarsesion.html')
 #Mi perfil
 @app.route('/perfil')
 def perfil():
