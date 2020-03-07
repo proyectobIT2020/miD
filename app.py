@@ -1,17 +1,17 @@
-from flask import Flask, render_template, request
+from flask import Flask, render_template
 from peewee import *
 import sqlite3
 
 #***************************************************
 #base de datos
 conn = sqlite3.connect('miDbd.db')
-#cursor = con.cursor()
+cursor = con.cursor()
 #insertar fila
-#cursor.execute(INSERT INTO usuario VALUES ('mail', 'contraseña'))
+cursor.execute(INSERT INTO usuario VALUES ('mail', 'contraseña'))
 #salvar datos
-#conn.commit()
+conn.commit()
 #cerrar conexion
-#conn.close()
+conn.close()
 #****************************************************
 
 app = Flask (__name__)
@@ -19,16 +19,11 @@ app = Flask (__name__)
 #Portada
 @app.route('/')
 def Index():
-    return render_template('Registro.html')
+    return render_template('index.html')
 #Registro
-@app.route('/registro', methods=['POST'])
+@app.route('/registro')
 def registro():
-    if request.method == 'POST':
-        mail = request.form['mail']
-        contraseña = request.form['contraseña']
-        print(mail)
-        print(contraseña)
-    return 'usuario registrado'
+    return render_template('Registro.html')
 
 #Ingresar datos
 @app.route('/datos')
