@@ -1,18 +1,23 @@
 from peewee import *
+from datetime import date
+
 
 db = SqliteDatabase('miDbd.db')
 
 class BaseModel(Model):
     class Meta:
-        database = database
+        database = db
 
 class Usuario(BaseModel):
-    id = AutoField(unique=true)
+    idUsuario = AutoField(unique=True)
     email = TextField()
     contraseña_encriptada = TextField()
 
+    class Meta:
+        db_table = "Usuarios"
+
 class PerfilBasico(BaseModel):
-    id = ForeignKeyField(Usuario, backref='usuarios')
+    id = ForeignKeyField(Usuario, backref='perfiles')
     nombre = TextField()
     apellido = TextField()
     celular = TextField()
