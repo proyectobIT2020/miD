@@ -19,16 +19,17 @@ app = Flask (__name__)
 #Portada
 @app.route('/')
 def Index():
-    return render_template('Registro.html')
+    return render_template('index.html')
 #Registro
-@app.route('/registro', methods=['POST'])
+@app.route('/registro')
 def registro():
-    if request.method == 'POST':
-        mail = request.form['mail']
-        contraseña = request.form['contraseña']
-        print(mail)
-        print(contraseña)
-    return 'usuario registrado'
+    #if request.method == 'POST':
+    #    mail = request.form['email']
+    #    contraseña = request.form['contraseña1']
+    #    contraseña = request.form['contraseña2']
+    #    print(mail)
+    #    print(contraseña)
+    return render_template('registro.html')
 
 #Ingresar datos
 @app.route('/datos')
