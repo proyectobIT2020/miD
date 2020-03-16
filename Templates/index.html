@@ -4,33 +4,30 @@
     <meta charset="utf-8">
     <title>mID</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
   </head>
   <body>
-    <div class="container-fluid" style="width:750px">
-    <header>
-      <nav>
-        <a href='https://www.instagram.com/mid_uy/?igshid=10zmjmq6t8uw3'target="_blank" style= margin-right: 20px >Seguinos! IG</a>
+      <div class="col-sm-12 text-center">
+      <header>
+      <nav class="nav navbar-nav navbar-right">
+        <a href='https://www.instagram.com/mid_uy/?igshid=10zmjmq6t8uw3'target="_blank" class="text-right" >Seguinos en IG!</a>
       </nav>
     </header>
-    <section>
-          <h1>Te damos la bienvenida a </h1>
-          <img src="/static/images/logo MID.png" alt="Logo de miD"></img>
+    <div class="jumbotron text-center">
+          <h2>Te damos la bienvenida a </h2>
+          <img src="/static/images/logo MID.png" class="img-responsive" style="width:50%" alt="Logo de miD" ></img>
       <nav>
         <div>
              <a class="btn btn-primary" href="{{ url_for('registro') }}" role= "button" style="margin-top: 8px">Registrarse</a>
-             <a class="btn btn-primary" href="{{ url_for('ingresar') }}" role= "button" style="margin-top: 8px">Iniciar Sesion</a>
+             <a class="btn btn-primary" href="{{ url_for('ingresar') }}" role= "button" style="margin-top: 8px">Iniciar sesión</a>
         </div>
       </nav>
-    </section>
+      </div>
     <footer>
-      <p> miD 2020 </p>
-      <p>
-        <nav>
-          <ul>
-            <li><a href="mailto:miduruguay@gmail.com">Contactate con nosotros!</a></li>
-          </ul>
+        <nav class="nav navbar-nav navbar-centre">
+          <a href="mailto:miduruguay@gmail.com">Contactate con nosotros</a>
         </nav>
-       </p>
+        <p>miD 2020 Todos los derechos reservados</p>
     </footer>
   </div>
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
