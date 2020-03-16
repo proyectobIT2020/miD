@@ -1,18 +1,6 @@
 from flask import Flask, render_template, request
 from peewee import *
-import sqlite3
 
-#***************************************************
-#base de datos
-conn = sqlite3.connect('miDbd.db')
-#cursor = con.cursor()
-#insertar fila
-#cursor.execute(INSERT INTO usuario VALUES ('mail', 'contraseña'))
-#salvar datos
-#conn.commit()
-#cerrar conexion
-#conn.close()
-#****************************************************
 
 app = Flask (__name__)
 
