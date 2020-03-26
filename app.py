@@ -1,5 +1,6 @@
 from flask import Flask, render_template, request
 from peewee import *
+import models.py
 
 
 app = Flask (__name__)

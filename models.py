@@ -96,4 +96,4 @@ def borrarUsuario():
 
 if __name__ == '__main__':
     #borrarUsuario()
-    agregarUsuario()
+    agregarUsuario("prueba3@hotmail", "clave3")
