@@ -1,6 +1,6 @@
 from flask import Flask, render_template, request
 from peewee import *
-import models.py
+#import models.py
 
 
 app = Flask (__name__)
@@ -23,11 +23,14 @@ def registro():
 #Ingresar datos
 @app.route('/datos')
 def datos():
+    #usuarioEmail = request.form['mail']
     return 'Ingreso de datos'
 #Login
-@app.route('/inicio')
+@app.route('/inicio', methods = ['POST', 'GET'])
 def ingresar():
     return render_template('iniciarsesion.html')
+    #usuarioEmail = request.form['mail']
+    #return "Ahora eres parte de miD"
 #Mi perfil
 @app.route('/perfil')
 def perfil():

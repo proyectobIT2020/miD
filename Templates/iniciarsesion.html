@@ -3,44 +3,49 @@
   <head>
     <meta charset="utf-8">
     <title>mID</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
   </head>
+
   <body>
-    <div class="container-fluid" style="width:550px">
+    <div class="col-sm-12 text-center container-fluid">
+
     <header>
-      <nav>
-        <ul>
-          <li><a href='https://www.instagram.com/mid_uy/?igshid=10zmjmq6t8uw3'>Seguinos! IG</a></li>
-        </ul>
-      </nav>
+    <nav class="nav navbar-nav navbar-right">
+    <a href='https://www.instagram.com/mid_uy/?igshid=10zmjmq6t8uw3'target="_blank" class="text-right">Seguinos en IG!</a>
+    </nav>
     </header>
 
     <section>
-      <ul>
-        <li>
-          <img src="\static\images\logo MID.png" alt="Logo de miD">
-        </li>
-      </ul>
-      <nav>
-        <ul>
-          <li>Registrarse</li>
-          <li>Iniciar sesión</li>
-        </ul>
-      </nav>
+      <div>
+          <img src="/static/images/logo MID.png" alt="Logo de miD">
+      </div>
 
       <p>
-      <form action="">
-        <input type="text" name="mail" placeholder="E-mail">
-        <input type="text" name="contraseña" placeholder="Contraseña">
+      <form action= "/inicio" method="post">
+        <div class="form-group">
+          <label for= "exampleInputEmail1">Correo</label>
+          <input type="text" name="mail" placeholder="Ingrese su correo"><br>
+          <label for= "exampleInputEmail1">Contraseña </label>
+          <input type="text" name="contraseña" placeholder="Ingrese su contraseña">
+          <small id= "ayuda" class= "form-text text-muted">Nunca daremos a nadie tus credenciales
+        </div>
         <button type="submit">
-          Save
+          Ingresar
         </button>
       </form>
       </p>
     </section>
 
-    <footer>
-      <p> Fin </p>
+    <footer class="page-footer font-small blue">
+    <div class="footer-copyright text-center py-3">
+        <nav class="nav navbar-nav navbar-centre">
+          <a href="mailto:miduruguay@gmail.com">Contactate con nosotros</a>
+        </nav>
+        <p>©2020 miD Todos los derechos reservados</p>
+    </div>
     </footer>
+
     </div>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
