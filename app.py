@@ -47,7 +47,7 @@ def ingresar():
 #Mi perfil
 @app.route('/perfil')
 def perfil():
-    return 'Mi perfil'
+    return render_template('perfil.html')
 #Contactos
 @app.route('/contactos')
 def contactos():
