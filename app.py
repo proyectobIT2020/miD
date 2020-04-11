@@ -1,7 +1,7 @@
 from flask import Flask, render_template, request
 from peewee import *
+import forms
 #import models.py
-
 
 app = Flask (__name__)
 
@@ -10,21 +10,34 @@ app = Flask (__name__)
 def Index():
     return render_template('index.html')
 #Registro
-@app.route('/registro')
+@app.route('/registro', methods = ['POST', 'GET'])
 def registro():
-    #if request.method == 'POST':
-    #    mail = request.form['email']
-    #    contraseña = request.form['contraseña1']
-    #    contraseña = request.form['contraseña2']
-    #    print(mail)
-    #    print(contraseña)
+#    registro_form = forms.RegistroForm(request.form)
+#    if request.method == 'POST':
+#        mail = request.form['email']
+#        contraseña = request.form['contraseña1']
+#        contraseña = request.form['contraseña2']
+#print()
     return render_template('registro.html')
+    #print (email)
+    #print (contraseña1)
+
+#    if request.method == 'POST':
+#        print (registro_form.mail.data)
+#        print (registro_form.contraseña.data)
+
+#    title = "Registro"
+#    return render_template('Registro.html', title = title, form = registro_form)
+
+app.config['SECRET_KEY'] = 'any secret string'
+
+
 
 #Ingresar datos
 @app.route('/datos')
 def datos():
     #usuarioEmail = request.form['mail']
-    return 'Ingreso de datos'
+    return render_template('ingresarDatos.html')
 #Login
 @app.route('/inicio', methods = ['POST', 'GET'])
 def ingresar():
