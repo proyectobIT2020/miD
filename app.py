@@ -1,7 +1,7 @@
 from flask import Flask, render_template, request
 from peewee import *
 #import forms
-#import models.py
+import models
 
 app = Flask (__name__)
 
@@ -9,6 +9,7 @@ app = Flask (__name__)
 @app.route('/')
 def Index():
     return render_template('index.html')
+
 #Registro
 @app.route('/registro', methods = ['POST', 'GET'])
 def registro():
@@ -30,7 +31,6 @@ def registro():
 #    return render_template('Registro.html', title = title, form = registro_form)
 
 app.config['SECRET_KEY'] = 'any secret string'
-
 
 
 #Ingresar datos
