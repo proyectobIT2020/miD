@@ -4,7 +4,7 @@
 
 {% block contenido %}
 
-<style type="text/css">
+<!--<style type="text/css">
 form {
     text-align: center;
     width: 40em;
@@ -25,10 +25,9 @@ label {
 input {
     display: inline-block;
     width: 15em;
-}
 
 }
-</style>
+</style>-->
 
 </head>
   <body>
@@ -40,47 +39,99 @@ input {
       </div>
 
       <p>
-        <form>
-        <div class="form-group">
-            <label for = "email">Nombre/s</label>
-            <input type="text" id="nombre" placeholder="Ingrese su nombre"> <br>
-            <label for="apellido">Apellido/s</label>
-            <input type="text"  id="apellido" placeholder="Ingrese su/sus apellido/s"><br>
-            <label for="fechanacimiento">Fecha de Nacimiento</label>
-            <input type="text" id="nacimiento" placeholder="XX/XX/XXXX"><br>
-            <label for = "celular">Celular</label>
-            <input type="int" id="celular" placeholder="XXX-XXX-XXX"> <br>
-            <label for = "telefono">Telefono</label>
-            <input type="int" id="telefono" placeholder="XXXX-XX-XX"> <br>
-            <label for = "pais">País</label>
-            <input type="text" id="pais" placeholder="Ej: Uruguay"> <br>
-            <label for = "ciudad">Ciudad</label>
-            <input type="text" id="ciudad" placeholder="Ej: Montevideo"> <br>
-            <label for = "profesion">Profesión</label>
-            <input type="text" id="profesion" placeholder="Ej: Contadora pública"> <br>
-            <label for = "empresa">Empresa</label>
-            <input type="text" id="empresa" placeholder="Ej: MID SRL"> <br>
-            <label for = "cargo">Cargo</label>
-            <input type="text" id="cargo" placeholder="Ej: Auxiliar contable"> <br>
-            <label for = "banco">Banco</label>
-            <input type="list" id="banco" placeholder="LISTA DESPLEGABLE"> <br>
-            <label for = "cuenta">N°Cuenta</label>
-            <input type="int" id="cuenta" placeholder="XXXXX-XXX"> <br>
-            <label for = "redes">Vincula tus redes sociales</label>
-            <input type="text" id="redes" placeholder="Linkedin, Facebook, Instragram"> <br>
-
-
-        </div>
+        <form class="form-horizontal" role="form">
+          <div class="form-group row justify-content-md-center">
+            <label for = "email" class="col-sm-1 control-label">Nombre/s</label>
+            <div class="col-sm-3">
+              <input type="text" class="form-control" id="nombre" placeholder="Ingrese su nombre">
+            </div>
+            </div>
+            <div class="form-group row justify-content-md-center">
+              <label for = "apellido" class="col-sm-1 control-label">Apellido/s</label>
+              <div class="col-sm-3">
+              <input type="text" class="form-control" id="apellido" placeholder="Ingrese su/sus apellido/s">
+            </div>
+            </div>
+            <div class="form-group row justify-content-md-center">
+              <label for = "fechanacimiento" class="col-sm-1 control-label">Fecha de Nacimiento</label>
+              <div class="col-sm-3">
+              <input type="date" class="form-control" id="nacimiento" placeholder="XX/XX/XXXX">
+            </div>
+            </div>
+            <div class="form-group row justify-content-md-center">
+              <label for = "celular" class="col-sm-1 control-label">Celular</label>
+              <div class="col-sm-3">
+              <input type="int" class="form-control" id="celular" placeholder="XXX-XXX-XXX">
+            </div>
+            </div>
+            <div class="form-group row justify-content-md-center">
+              <label for = "telefono" class="col-sm-1 control-label">Teléfono</label>
+              <div class="col-sm-3">
+              <input type="int" class="form-control" id="telefono" placeholder="XXXX-XX-XX">
+            </div>
+            </div>
+            <div class="form-group row justify-content-md-center">
+              <label for = "telefono" class="col-sm-1 control-label">Teléfono</label>
+              <div class="col-sm-3">
+              <input type="int" class="form-control" id="telefono" placeholder="XXXX-XX-XX">
+            </div>
+            </div>
+            <div class="form-group row justify-content-md-center">
+              <label for = "pais" class="col-sm-1 control-label">País</label>
+              <div class="col-sm-3">
+              <input type="text" class="form-control" id="pais" placeholder="Ej: Uruguay">
+            </div>
+            </div>
+            <div class="form-group row justify-content-md-center">
+              <label for = "ciudad" class="col-sm-1 control-label">Ciudad</label>
+              <div class="col-sm-3">
+              <input type="text" class="form-control" id="ciudad" placeholder="Ej: Montevideo">
+            </div>
+            </div>
+            <div class="form-group row justify-content-md-center">
+              <label for = "profesion" class="col-sm-1 control-label">Profesión</label>
+              <div class="col-sm-3">
+              <input type="text" class="form-control" id="profesion" placeholder="Ej: Contadora pública">
+            </div>
+            </div>
+            <div class="form-group row justify-content-md-center">
+              <label for = "empresa" class="col-sm-1 control-label">Empresa</label>
+              <div class="col-sm-3">
+              <input type="text" class="form-control" id="empresa" placeholder="Ej: MID SRL">
+            </div>
+            </div>
+            <div class="form-group row justify-content-md-center">
+              <label for = "cargo" class="col-sm-1 control-label">Cargo</label>
+              <div class="col-sm-3">
+              <input type="text" class="form-control" id="cargo" placeholder="Ej: Auxiliar contabl">
+            </div>
+            </div>
+            <div class="form-group row justify-content-md-center">
+              <label for = "banco" class="col-sm-1 control-label">Banco</label>
+              <div class="col-sm-3">
+              <input type="list" class="form-control" id="banco" placeholder="LISTA DESPLEGABLE">
+            </div>
+            </div>
+            <div class="form-group row justify-content-md-center">
+              <label for = "cuenta" class="col-sm-1 control-label">N°Cuenta</label>
+              <div class="col-sm-3">
+              <input type="int" class="form-control" id="cuenta" placeholder="XXXXX">
+            </div>
+            </div>
+            <div class="form-group row justify-content-md-center">
+              <label for = "redes" class="col-sm-1 control-label">Vincula tus redes sociales</label>
+              <div class="col-sm-3">
+              <input type="text" class="form-control" id="redes" placeholder="Linkedin, Facebook, Instragram">
+            </div>
+            </div>
         </form>
-
         <form action="">
           <button type="submit">
             Crea tu ID
           </button>
         </form>
       </p>
+    </div>
     </section>
-
-{% endblock %}
-
+  {% endblock %}
 </html>
