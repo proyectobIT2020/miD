@@ -5,6 +5,19 @@ import models
 
 app = Flask (__name__)
 
+
+#config MySQL
+app.config['MYSQL_DATABASE_HOST'] = 'localhost'
+#app.config['MYSQL_DATABASE_PORT'] = 3306
+app.config['MYSQL_DATABASE_USER'] = 'root'
+app.config['MYSQL_DATABASE_PASSWORD'] = 'root'
+app.config['MYSQL_DATABASE_DB'] = 'middb'
+app.config['MYSQL_DATABASE_CURSORCLASS'] = 'DictCursor'
+
+#init MySQL
+mysql=MySQL()
+mysql.init_app(app)
+
 #Portada
 @app.route('/')
 def Index():
@@ -13,7 +26,6 @@ def Index():
 #Registro
 @app.route('/registro', methods = ['POST', 'GET'])
 def registro():
-#        contraseña = request.form['contraseña1']
     form = RegisterForm(request.form)
     if request.method == 'POST' and form.validate():
         email = form.email.data
