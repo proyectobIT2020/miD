@@ -13,22 +13,22 @@ def Index():
 #Registro
 @app.route('/registro', methods = ['POST', 'GET'])
 def registro():
-#    registro_form = forms.RegistroForm(request.form)
-#    if request.method == 'POST':
-#        mail = request.form['email']
 #        contraseña = request.form['contraseña1']
-#        contraseña = request.form['contraseña2']
-#print()
-    return render_template('registro.html')
-    #print (email)
-    #print (contraseña1)
+    form = RegisterForm(request.form)
+    if request.method == 'POST' and form.validate():
+        email = form.email.data
+        password = sha256_crypt.encrypt(str(form.password.data))
 
-#    if request.method == 'POST':
-#        print (registro_form.mail.data)
-#        print (registro_form.contraseña.data)
+        cur = mysql.get_db().cursor()
+        cur.execute("INSERT INTO Usuarios(email, contraseña_encriptada) VALUES(%s, %s)",(email, password))
+        mysql.get_db().commit()
+        cur.close()
 
-#    title = "Registro"
-#    return render_template('Registro.html', title = title, form = registro_form)
+        flash('¡Ya estás registrado!', 'success')
+        return redirect(url_for('datos'))
+
+    return render_template('registro.html', form=form)
+
 
 app.config['SECRET_KEY'] = 'any secret string'
 
