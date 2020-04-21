@@ -13,7 +13,7 @@ app = Flask (__name__)
 app.config['MYSQL_DATABASE_HOST'] = 'localhost'
 #app.config['MYSQL_DATABASE_PORT'] = 3306
 app.config['MYSQL_DATABASE_USER'] = 'root'
-app.config['MYSQL_DATABASE_PASSWORD'] = 'root'
+app.config['MYSQL_DATABASE_PASSWORD'] = '123456'
 app.config['MYSQL_DATABASE_DB'] = 'middb'
 app.config['MYSQL_DATABASE_CURSORCLASS'] = 'DictCursor'
 
@@ -29,12 +29,12 @@ def Index():
 #Registro
 
 class RegisterForm(Form):
-    email = StringField('Email', [validators.Length(min=6, max=50)])
-    password = PasswordField('Password', [
+    email = StringField('Correo', [validators.Length(min=6, max=50)])
+    password = PasswordField('Contraseña', [
         validators.DataRequired(),
-        validators.EqualTo('confirm', message="Password do not match")
+        validators.EqualTo('confirm', message="Las contraseñas no coinciden")
     ])
-    confirm = PasswordField('Confirm Password')
+    confirm = PasswordField('Confirmar contraseña')
 
 @app.route('/registro', methods = ['POST', 'GET'])
 def registro():
