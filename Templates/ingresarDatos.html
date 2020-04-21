@@ -3,10 +3,7 @@
 <html>
 
 {% block contenido %}
-
   <body>
-    <div class="col-sm-12 text-center container-fluid">
-
     <section>
       <div>
           <img src="/static/images/logo MID.png" alt="Logo de miD"> <br>
@@ -16,104 +13,83 @@
       </div>
 
       <p>
-        <form class="form-horizontal" role="form">
+        {% from "includes/_formhelpers.html" import render_field %}
+        <form method="POST" action="" >
           <div class="form-group row justify-content-md-center">
-            <label for = "email" class="col-sm-1 control-label">Nombre/s</label>
-            <div class="col-sm-3">
-              <input type="text" class="form-control" id="nombre" placeholder="Ingrese su nombre">
-            </div>
+              <div class="form-inline">
+                {{render_field (form.nombre, class_ = "form-control", placeholder="Ej. Maria José" )}}
+              </div>
+          </div>
+          <div class="form-group row justify-content-md-center">
+              <div class="form-inline">
+                {{render_field (form.apellido, class = "form-control", placeholder="Ej. Rodriguez Martinez" )}}
+              </div>
+          </div>
+            <div class="form-group row justify-content-md-center">
+              <div class="form-inline">
+                {{render_field (form.fecha_nacimiento, class = "form-control", placeholder="Ej. 10/05/1985" )}}
+              </div>
             </div>
             <div class="form-group row justify-content-md-center">
-              <label for = "apellido" class="col-sm-1 control-label">Apellido/s</label>
-              <div class="col-sm-3">
-              <input type="text" class="form-control" id="apellido" placeholder="Ingrese su/sus apellido/s">
-            </div>
-            </div>
-            <div class="form-group row justify-content-md-center">
-              <label for = "fechanacimiento" class="col-sm-1 control-label">Fecha de Nacimiento</label>
-              <div class="col-sm-3">
-              <input type="date" class="form-control" id="nacimiento" placeholder="XX/XX/XXXX">
-            </div>
+              <div class="form-inline">
+                {{render_field (form.celular, class = "form-control", placeholder="09X XXX XXX" )}}
+              </div>
             </div>
             <div class="form-group row justify-content-md-center">
-              <label for = "celular" class="col-sm-1 control-label">Celular</label>
-              <div class="col-sm-3">
-              <input type="int" class="form-control" id="celular" placeholder="XXX-XXX-XXX">
-            </div>
-            </div>
-            <div class="form-group row justify-content-md-center">
-              <label for = "telefono" class="col-sm-1 control-label">Teléfono</label>
-              <div class="col-sm-3">
-              <input type="int" class="form-control" id="telefono" placeholder="XXXX-XX-XX">
-            </div>
+              <div class="form-inline">
+                {{render_field (form.telefono, class = "form-control", placeholder="XXXX XX XX " )}}
+              </div>
             </div>
             <div class="form-group row justify-content-md-center">
-              <label for = "telefono" class="col-sm-1 control-label">Teléfono</label>
-              <div class="col-sm-3">
-              <input type="int" class="form-control" id="telefono" placeholder="XXXX-XX-XX">
-            </div>
-            </div>
-            <div class="form-group row justify-content-md-center">
-              <label for = "pais" class="col-sm-1 control-label">País</label>
-              <div class="col-sm-3">
-              <input type="text" class="form-control" id="pais" placeholder="Ej: Uruguay">
-            </div>
+              <div class="form-inline">
+                {{render_field (form.pais, class = "form-control", placeholder="Ej. Uruguay" )}}
+              </div>
             </div>
             <div class="form-group row justify-content-md-center">
-              <label for = "ciudad" class="col-sm-1 control-label">Ciudad</label>
-              <div class="col-sm-3">
-              <input type="text" class="form-control" id="ciudad" placeholder="Ej: Montevideo">
-            </div>
-            </div>
-            <div class="form-group row justify-content-md-center">
-              <label for = "profesion" class="col-sm-1 control-label">Profesión</label>
-              <div class="col-sm-3">
-              <input type="text" class="form-control" id="profesion" placeholder="Ej: Contadora pública">
-            </div>
+              <div class="form-inline">
+                {{render_field (form.ciudad, class = "form-control", placeholder="Ej. Canelones" )}}
+              </div>
             </div>
             <div class="form-group row justify-content-md-center">
-              <label for = "empresa" class="col-sm-1 control-label">Empresa</label>
-              <div class="col-sm-3">
-              <input type="text" class="form-control" id="empresa" placeholder="Ej: MID SRL">
-            </div>
-            </div>
-            <div class="form-group row justify-content-md-center">
-              <label for = "cargo" class="col-sm-1 control-label">Cargo</label>
-              <div class="col-sm-3">
-              <input type="text" class="form-control" id="cargo" placeholder="Ej: Auxiliar contable">
-            </div>
+              <div class="form-inline">
+                {{render_field (form.profesion, class = "form-control", placeholder="Ej. Administradora de empresas" )}}
+              </div>
             </div>
             <div class="form-group row justify-content-md-center">
-              <label for = "banco" class="col-sm-1 control-label">Banco</label>
-              <div class="col-sm-3">
-              <input type="text" list="items" class="form-control" id="banco" placeholder="Elige una opción">
+              <div class="form-inline">
+                {{render_field (form.empresa, class = "form-control", placeholder="Ej. XX SA" )}}
+              </div>
+            </div>
+            <div class="form-group row justify-content-md-center">
+              <div class="form-inline">
+                {{render_field (form.cargo, class = "form-control", placeholder="Ej. Administrativa" )}}
+              </div>
+            </div>
+            <div class="form-group row justify-content-md-center">
+              <div class="form-inline">
+                {{render_field (form.banco, class = "form-control", placeholder="Ej. Santander" )}}
                 <datalist id="items">
                   <option>BROU</option>
                   <option>SANTANDER</option>
                   <option>ITAÚ</option>
                 </datalist>
                 </select>
-
             </div>
             </div>
             <div class="form-group row justify-content-md-center">
-              <label for = "cuenta" class="col-sm-1 control-label">N°Cuenta</label>
-              <div class="col-sm-3">
-              <input type="int" class="form-control" id="cuenta" placeholder="XXXXX">
-            </div>
+              <div class="form-inline">
+                {{render_field (form.num_cuenta, class = "form-control", placeholder="XXX XXXXX" )}}
+              </div>
             </div>
             <div class="form-group row justify-content-md-center">
-              <label for = "redes" class="col-sm-1 control-label">Vincula tus redes sociales</label>
-              <div class="col-sm-3">
-              <input type="text" class="form-control" id="redes" placeholder="Linkedin, Facebook, Instragram">
+              <div class="form-inline">
+                {{render_field (form.redes_sociales, class = "form-control", placeholder="" )}}
+              </div>
             </div>
-            </div>
-        </form>
-        <form action="">
-          <a class="btn btn-primary" href="{{ url_for('perfil') }}" role= "button" style="margin-top: 8px">Guardar y compartir!</a>
+            <input class="btn btn-primary" type="submit" value="Guardar y Compartir!" style="margin-top: 8px">
         </form>
       </p>
-    </div>
     </section>
+
   {% endblock %}
 </html>
