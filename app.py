@@ -8,11 +8,11 @@ from passlib.hash import sha256_crypt
 app = Flask (__name__)
 
 
-#config MySQL
+#config MySQL - CAMBIAR CONTRASEÑA LOCAL
 app.config['MYSQL_DATABASE_HOST'] = 'localhost'
 #app.config['MYSQL_DATABASE_PORT'] = 3306
 app.config['MYSQL_DATABASE_USER'] = 'root'
-app.config['MYSQL_DATABASE_PASSWORD'] = 'root'
+app.config['MYSQL_DATABASE_PASSWORD'] = '123456'
 app.config['MYSQL_DATABASE_DB'] = 'middb'
 app.config['MYSQL_DATABASE_CURSORCLASS'] = 'DictCursor'
 
@@ -49,6 +49,12 @@ def registro():
         return redirect(url_for('datos'))
     return render_template('registro.html', form=form)
 app.config['SECRET_KEY'] = 'any secret string'
+
+#class ID():
+#    cur = mysql.get_db().cursor()
+#    cur = cur.execute ("SELECT id FROM Usuarios WHERE email = ()")
+#    mysql.get_db().commit()
+#    cur.close()
 
 #Ingresar datos
 class DatosForm(Form):
