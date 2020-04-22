@@ -4,7 +4,6 @@ import mysql.connector
 from peewee import *
 from wtforms import Form, StringField, TextAreaField, PasswordField, validators
 from passlib.hash import sha256_crypt
-import models
 
 app = Flask (__name__)
 
@@ -13,7 +12,7 @@ app = Flask (__name__)
 app.config['MYSQL_DATABASE_HOST'] = 'localhost'
 #app.config['MYSQL_DATABASE_PORT'] = 3306
 app.config['MYSQL_DATABASE_USER'] = 'root'
-app.config['MYSQL_DATABASE_PASSWORD'] = '123456'
+app.config['MYSQL_DATABASE_PASSWORD'] = 'root'
 app.config['MYSQL_DATABASE_DB'] = 'middb'
 app.config['MYSQL_DATABASE_CURSORCLASS'] = 'DictCursor'
 
@@ -60,6 +59,7 @@ class DatosForm(Form):
     telefono = StringField('Teléfono', [validators.Length(min=1, max=50)])
     pais = StringField('País', [validators.Length(min=1, max=50)])
     ciudad = StringField('Ciudad', [validators.Length(min=1, max=50)])
+    direccion = StringField('Dirección', [validators.Length(min=1, max=50)])
     profesion = StringField('Profesión', [validators.Length(min=1, max=50)])
     empresa = StringField('Empresa', [validators.Length(min=1, max=50)])
     cargo = StringField('Cargo', [validators.Length(min=1, max=50)])
@@ -78,6 +78,7 @@ def datos():
         telefono = form.telefono.data
         pais = form.pais.data
         ciudad = form.ciudad.data
+        direccion = form.direccion.data
         profesion = form.profesion.data
         empresa = form.empresa.data
         cargo = form.cargo.data
@@ -86,7 +87,7 @@ def datos():
         redes_sociales = form.redes_sociales.data
 
         cur = mysql.get_db().cursor()
-        cur.execute("INSERT INTO datos(nombre, apellido, fecha_nacimiento, celular, telefono, pais, ciudad, profesion, empresa, cargo, banco, num_cuenta, redes_sociales) VALUES(%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s)",(nombre, apellido, fecha_nacimiento, celular, telefono, pais, ciudad, profesion, empresa, cargo, banco, num_cuenta, redes_sociales))
+        cur.execute("INSERT INTO datos_activos(nombre, apellido, fecha_nacimiento, celular, telefono, pais, ciudad, direccion, profesion, empresa, cargo, banco, num_cuenta, redes_sociales) VALUES(%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s)",(nombre, apellido, fecha_nacimiento, celular, telefono, pais, ciudad, direccion, profesion, empresa, cargo, banco, num_cuenta, redes_sociales))
         mysql.get_db().commit()
         cur.close()
 
